@@ -1,6 +1,6 @@
 package net.nanaky.frost_lava_walker.config;
 
-public class LavaWalkerConfig {
+public class ServerConfig {
 
     // Server-side
     public boolean lavaWalkerEnabled     = true;
@@ -10,10 +10,6 @@ public class LavaWalkerConfig {
     public int     gildedWarningTicks    = 15;
     public int     magmaShortTicks       = 10;
     public int     cooldownExtraTicks    = 5;
-
-    // Client-side
-    public boolean showParticles         = true;
-    public boolean playSoundEffects       = true;
 
     // Derived — call after loading
     public int totalLifecycleTicks() {

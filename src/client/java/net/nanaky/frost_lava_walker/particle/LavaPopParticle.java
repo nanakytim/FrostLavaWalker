@@ -21,7 +21,7 @@ public class LavaPopParticle extends SingleQuadParticle {
         this.zd       = 0.0;
         this.lifetime = 34;
         this.quadSize *= 3.0F;
-        this.setSpriteFromAge(sprites); // frame 0 on spawn
+        this.setSpriteFromAge(sprites);
     }
 
     @Override
@@ -36,7 +36,7 @@ public class LavaPopParticle extends SingleQuadParticle {
             this.remove();
             return;
         }
-        this.setSpriteFromAge(sprites); // advances frame each tick
+        this.setSpriteFromAge(sprites);
     }
 
     @Override

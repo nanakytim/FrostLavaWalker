@@ -5,42 +5,53 @@ import me.shedaniel.clothconfig2.api.ConfigBuilder;
 import me.shedaniel.clothconfig2.api.ConfigCategory;
 import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
 import net.minecraft.network.chat.Component;
-import net.nanaky.frost_lava_walker.config.ConfigManager;
-import net.nanaky.frost_lava_walker.config.LavaWalkerConfig;
+import net.nanaky.frost_lava_walker.config.ClientConfig;
+import net.nanaky.frost_lava_walker.config.ClientConfigManager;
+import net.nanaky.frost_lava_walker.config.ServerConfigManager;
+import net.nanaky.frost_lava_walker.config.ServerConfig;
 
 public class ClothConfigScreenFactory {
 
     public static ConfigScreenFactory<?> create() {
-        return parent -> {
-            LavaWalkerConfig cfg = ConfigManager.INSTANCE;
-            LavaWalkerConfig def = new LavaWalkerConfig();
+    return parent -> {
+        ServerConfig cfg = ServerConfigManager.INSTANCE;
+        ServerConfig def = new ServerConfig();
+        ClientConfig clientCfg = ClientConfigManager.INSTANCE;
+        ClientConfig clientDef = new ClientConfig();
 
-            ConfigBuilder builder = ConfigBuilder.create()
-                .setParentScreen(parent)
-                .setTitle(Component.translatable("config.frost_lava_walker.title"))
-                .setSavingRunnable(ConfigManager::save);
+        ConfigBuilder builder = ConfigBuilder.create()
+            .setParentScreen(parent)
+            .setTitle(Component.translatable("config.frost_lava_walker.title"))
+            .setSavingRunnable(() -> {
+                ServerConfigManager.save();
+                ClientConfigManager.save();
+            });
 
-            ConfigEntryBuilder eb = builder.entryBuilder();
+        ConfigEntryBuilder eb = builder.entryBuilder();
 
-            ConfigCategory client = builder.getOrCreateCategory(
-                Component.translatable("config.frost_lava_walker.category.client"));
+        ConfigCategory client = builder.getOrCreateCategory(
+            Component.translatable("config.frost_lava_walker.category.client"));
 
-            client.addEntry(eb.startBooleanToggle(
-                    Component.translatable("config.frost_lava_walker.show_particles"), cfg.showParticles)
-                .setDefaultValue(def.showParticles)
-                .setTooltip(Component.translatable("config.frost_lava_walker.show_particles.tooltip"))
-                .setSaveConsumer(v -> cfg.showParticles = v)
-                .build());
+        client.addEntry(eb.startBooleanToggle(
+                Component.translatable("config.frost_lava_walker.show_particles"), clientCfg.showParticles)
+            .setDefaultValue(clientDef.showParticles)
+            .setTooltip(Component.translatable("config.frost_lava_walker.show_particles.tooltip"))
+            .setSaveConsumer(v -> clientCfg.showParticles = v)
+            .build());
 
-            client.addEntry(eb.startBooleanToggle(
-                    Component.translatable("config.frost_lava_walker.play_sound_effects"), cfg.playSoundEffects)
-                .setDefaultValue(def.playSoundEffects)
-                .setTooltip(Component.translatable("config.frost_lava_walker.play_sound_effects.tooltip"))
-                .setSaveConsumer(v -> cfg.playSoundEffects = v)
-                .build());
+        client.addEntry(eb.startBooleanToggle(
+                Component.translatable("config.frost_lava_walker.play_sound_effects"), clientCfg.playSoundEffects)
+            .setDefaultValue(clientDef.playSoundEffects)
+            .setTooltip(Component.translatable("config.frost_lava_walker.play_sound.tooltip"))
+            .setSaveConsumer(v -> clientCfg.playSoundEffects = v)
+            .build());
 
             ConfigCategory server = builder.getOrCreateCategory(
                 Component.translatable("config.frost_lava_walker.category.server"));
+
+            server.addEntry(eb.startTextDescription(
+                Component.translatable("config.frost_lava_walker.server_warning"))
+            .build());
 
             server.addEntry(eb.startBooleanToggle(
                     Component.translatable("config.frost_lava_walker.lava_walker_enabled"), cfg.lavaWalkerEnabled)

@@ -1,7 +1,9 @@
 {
   "config.frost_lava_walker.title": "Frost Lava Walker – Настройки",
-  "config.frost_lava_walker.category.client": "Клиент",
-  "config.frost_lava_walker.category.server": "Сервер",
+  "config.frost_lava_walker.category.client": "Клиент (Эффекты)",
+  "config.frost_lava_walker.category.server": "Сервер (Геймплей)",
+
+  "config.frost_lava_walker.server_warning": "⚠ На выделенном сервере эти значения игнорируются. Отредактируйте 'frostlavawalker_server.json' в папке конфигурации сервера.",
 
   "config.frost_lava_walker.show_particles": "Показывать частицы",
   "config.frost_lava_walker.show_particles.tooltip": "Показывает частицы при конверсии блоков. Отключите при лагах.",

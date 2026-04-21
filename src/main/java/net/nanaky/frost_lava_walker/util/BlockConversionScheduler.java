@@ -1,6 +1,5 @@
 package net.nanaky.frost_lava_walker.util;
 
-import net.nanaky.frost_lava_walker.enchantment.LavaWalkerEnchantmentLogic;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
@@ -30,8 +29,8 @@ public class BlockConversionScheduler {
     public static void tick(ServerLevel level) {
         long now = level.getGameTime();
         ResourceKey<Level> dim = level.dimension();
-        LavaWalkerEnchantmentLogic.pruneConversionCooldown(now);
-
+        LavaWalkerLogic.pruneConversionCooldown(now);
+        FrostFXHelper.tickTracked(level);
         List<Map.Entry<DimPos, ScheduledRevert>> due = new ArrayList<>();
         var iterator = QUEUE.entrySet().iterator();
         while (iterator.hasNext()) {
@@ -43,7 +42,7 @@ public class BlockConversionScheduler {
         }
 
         for (Map.Entry<DimPos, ScheduledRevert> entry : due) {
-            LavaWalkerEnchantmentLogic.revertBlock(
+            LavaWalkerLogic.revertBlock(
                 level,
                 entry.getKey().pos(),
                 entry.getValue().revertTo(),
@@ -55,7 +54,7 @@ public class BlockConversionScheduler {
             LavaWalkerPersistentState state = LavaWalkerPersistentState.get(level);
             QUEUE.entrySet().stream()
                 .filter(e -> e.getKey().dim().equals(dim))
-                .forEach(e -> state.startTimes.putIfAbsent(e.getKey().pos(), System.currentTimeMillis()));
+                .forEach(e -> state.startTimes.putIfAbsent(e.getKey().pos(), level.getGameTime()));
             state.setDirty();
         }
     }

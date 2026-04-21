@@ -5,7 +5,8 @@ import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleProviderRegistry;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
-import net.nanaky.frost_lava_walker.config.ConfigManager;
+import net.nanaky.frost_lava_walker.client.ClientPacketHandler;
+import net.nanaky.frost_lava_walker.config.ClientConfigManager;
 import net.nanaky.frost_lava_walker.network.SpawnParticlePacket;
 import net.nanaky.frost_lava_walker.particle.LavaPopParticle;
 import net.nanaky.frost_lava_walker.particle.LavaWalkerParticles;
@@ -14,6 +15,9 @@ public class LavaWalkerClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
+        ClientConfigManager.load();
+        LavaWalkerParticles.register();
+        ClientPacketHandler.register();
         ParticleProviderRegistry.getInstance().register(
             LavaWalkerParticles.LAVA_POP, LavaPopParticle.Provider::new
         );

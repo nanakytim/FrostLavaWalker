@@ -3,6 +3,8 @@
   "config.frost_lava_walker.category.client": "クライアント",
   "config.frost_lava_walker.category.server": "サーバー",
 
+  "config.frost_lava_walker.server_warning": "⚠ 専用サーバーではこれらの値は無視されます。サーバーのconfigフォルダ内の 'frostlavawalker_server.json' を編集してください。",
+
   "config.frost_lava_walker.show_particles": "パーティクル表示",
   "config.frost_lava_walker.show_particles.tooltip": "ブロック変換時にパーティクルを表示します。ラグ時は無効化してください。",
 

@@ -1,14 +1,34 @@
 {
-  "config.frost_lava_walker.title": "Frost Lava Walker – Konfiguracja",
-  "config.frost_lava_walker.category.client": "Klient",
-  "config.frost_lava_walker.category.server": "Serwer",
-  "config.frost_lava_walker.show_particles": "Pokaż cząsteczki",
-  "config.frost_lava_walker.play_sound_effects": "Odtwarzaj efekty dźwiękowe",
-  "config.frost_lava_walker.lava_walker_enabled": "Lava Walker włączony",
-  "config.frost_lava_walker.base_radius": "Promień bazowy",
-  "config.frost_lava_walker.phase_1": "Faza 1",
-  "config.frost_lava_walker.phase_2": "Faza 2",
-  "config.frost_lava_walker.phase_3": "Faza 3",
-  "config.frost_lava_walker.phase_4": "Faza końcowa",
-  "config.frost_lava_walker.cooldown_phase": "Faza odnowienia"
+    "config.frost_lava_walker.title": "Frost Lava Walker – Konfiguracja",
+    "config.frost_lava_walker.category.client": "Klient (Efekty)",
+    "config.frost_lava_walker.category.server": "Serwer (Rozgrywka)",
+
+    "config.frost_lava_walker.server_warning": "⚠ Na serwerze dedykowanym te wartości są ignorowane. Edytuj 'frostlavawalker_server.json' w folderze config serwera.",
+
+    "config.frost_lava_walker.show_particles": "Pokazuj cząsteczki",
+    "config.frost_lava_walker.show_particles.tooltip": "Pokazuj cząsteczki podczas konwersji bloków. Wyłącz, jeśli powoduje lagi.",
+
+    "config.frost_lava_walker.play_sound_effects": "Efekty dźwiękowe",
+    "config.frost_lava_walker.play_sound.tooltip": "Odtwarzaj dźwięki podczas konwersji bloków. Wyłącz, jeśli powoduje lagi.",
+
+    "config.frost_lava_walker.lava_walker_enabled": "Włącz Lava Walker",
+    "config.frost_lava_walker.lava_walker_enabled.tooltip": "Włącza Lava Walker. Wyłącz, aby całkowicie usunąć mechanikę.",
+
+    "config.frost_lava_walker.base_radius": "Bazowy promień",
+    "config.frost_lava_walker.base_radius.tooltip": "Promień Lava Walker w blokach. Poziom zaklęcia jest dodawany do wartości. Ustaw 0, aby tylko Frost Walker II pozwalał chodzić po lawie.",
+
+    "config.frost_lava_walker.gilded_initial_ticks": "Faza 1 - Błysk",
+    "config.frost_lava_walker.gilded_initial_ticks.tooltip": "Czas trwania początkowego błysku z gilded blackstone.",
+
+    "config.frost_lava_walker.blackstone_main_ticks": "Faza 2 - Stała",
+    "config.frost_lava_walker.blackstone_main_ticks.tooltip": "Czas trwania głównej bezpiecznej fazy z blackstone. Domyślnie najdłuższa.",
+
+    "config.frost_lava_walker.gilded_warning_ticks": "Faza 3 - Ostrzeżenie",
+    "config.frost_lava_walker.gilded_warning_ticks.tooltip": "Czas trwania pierwszej fazy ostrzegawczej (ponownie gilded blackstone).",
+
+    "config.frost_lava_walker.magma_short_ticks": "Faza 4 - Magma",
+    "config.frost_lava_walker.magma_short_ticks.tooltip": "Czas trwania fazy bloków magmy.",
+
+    "config.frost_lava_walker.cooldown_extra_ticks": "Cooldown",
+    "config.frost_lava_walker.cooldown_extra_ticks.tooltip": "Dodatkowe ticki, podczas których lawa nie może być ponownie przekształcona. Ustaw 0, aby wyłączyć."
 }

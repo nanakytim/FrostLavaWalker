@@ -1,7 +1,7 @@
 package net.nanaky.frost_lava_walker.mixin;
 
-import net.nanaky.frost_lava_walker.enchantment.LavaWalkerEnchantmentLogic;
-import net.nanaky.frost_lava_walker.util.FrostFxHelper;
+import net.nanaky.frost_lava_walker.util.FrostFXHelper;
+import net.nanaky.frost_lava_walker.util.LavaWalkerLogic;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
@@ -21,13 +21,13 @@ public class FrostWalkerEnchantmentMixin {
         if (!(level instanceof ServerLevel serverLevel)) return;
         if (!self.onGround()) return;
 
-        FrostFxHelper.onEntityStep(serverLevel, self);
+        FrostFXHelper.onEntityStep(serverLevel, self);
         
-        LavaWalkerEnchantmentLogic.onEntityStep(serverLevel, self);
+        LavaWalkerLogic.onEntityStep(serverLevel, self);
     }
 
     @Inject(method = "die", at = @At("HEAD"))
     private void lavawalker_die(net.minecraft.world.damagesource.DamageSource src, CallbackInfo ci) {
-        FrostFxHelper.onEntityRemoved((LivingEntity)(Object)this);
+        FrostFXHelper.onEntityRemoved((LivingEntity)(Object)this);
     }
 }

@@ -1,7 +1,9 @@
 {
   "config.frost_lava_walker.title": "Frost Lava Walker – Configurazione",
-  "config.frost_lava_walker.category.client": "Client",
-  "config.frost_lava_walker.category.server": "Server",
+  "config.frost_lava_walker.category.client": "Lato client (Effetti)",
+  "config.frost_lava_walker.category.server": "Lato server (Gameplay)",
+
+  "config.frost_lava_walker.server_warning": "⚠ Su un server dedicato, questi valori vengono ignorati. Modifica 'frostlavawalker_server.json' nella cartella di configurazione del server.",
 
   "config.frost_lava_walker.show_particles": "Mostra particelle",
   "config.frost_lava_walker.show_particles.tooltip": "Mostra particelle durante la conversione dei blocchi. Disattiva se c'è lag.",

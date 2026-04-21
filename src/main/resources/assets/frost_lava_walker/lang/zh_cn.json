@@ -1,7 +1,9 @@
 {
   "config.frost_lava_walker.title": "Frost Lava Walker – 配置",
-  "config.frost_lava_walker.category.client": "客户端",
-  "config.frost_lava_walker.category.server": "服务器",
+  "config.frost_lava_walker.category.client": "客户端（效果）",
+  "config.frost_lava_walker.category.server": "服务器（游戏机制）",
+
+  "config.frost_lava_walker.server_warning": "⚠ 在专用服务器上，这些值会被忽略。请在服务器的配置文件夹中编辑 'frostlavawalker_server.json'。",
 
   "config.frost_lava_walker.show_particles": "显示粒子",
   "config.frost_lava_walker.show_particles.tooltip": "在方块转换时显示粒子。卡顿时可关闭。",

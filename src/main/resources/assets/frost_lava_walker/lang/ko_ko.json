@@ -1,7 +1,9 @@
 {
   "config.frost_lava_walker.title": "Frost Lava Walker – 설정",
-  "config.frost_lava_walker.category.client": "클라이언트",
-  "config.frost_lava_walker.category.server": "서버",
+  "config.frost_lava_walker.category.client": "클라이언트 (효과)",
+  "config.frost_lava_walker.category.server": "서버 (게임플레이)",
+
+  "config.frost_lava_walker.server_warning": "⚠ 전용 서버에서는 이 값들이 무시됩니다. 서버의 config 폴더에서 'frostlavawalker_server.json'을 편집하세요.",
 
   "config.frost_lava_walker.show_particles": "파티클 표시",
   "config.frost_lava_walker.show_particles.tooltip": "블록 변환 시 파티클을 표시합니다. 렉이 발생하면 비활성화하세요.",
