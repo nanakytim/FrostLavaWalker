@@ -1,5 +1,6 @@
+<img width="512" height="512" alt="frost_lava_walker" src="https://github.com/user-attachments/assets/37815125-a9f3-49b8-adfe-28025264036f" />
+
 ### If you also think Frost Walker should allow you to walk on Lava, this mod is for you!
-<img width="360" height="360" alt="frost_lava_walker" src="https://github.com/user-attachments/assets/94b76bb4-aeb9-415c-8109-81468bac5604" />
 
 # ⚙️ Configuration
 ### ✨ Toggle Particles / Sound Effects
