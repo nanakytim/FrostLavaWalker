@@ -1,4 +1,4 @@
-<img width="512" height="512" alt="frost_lava_walker" src="https://github.com/user-attachments/assets/37815125-a9f3-49b8-adfe-28025264036f" />
+<img width="512" height="512" alt="frost_lava_walker" src="https://github.com/user-attachments/assets/e7ee9e90-28b4-43c8-b188-f25b794044d9" />
 
 ### If you also think Frost Walker should allow you to walk on Lava, this mod is for you!
 
